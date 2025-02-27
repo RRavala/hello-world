@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Folder
-        run: mkdir -p new-folder/sub-folder
+        run: mkdir -p rr_test/sub-folder
 
       - name: Commit and Push Changes
         run: |
