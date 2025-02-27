@@ -1,0 +1,23 @@
+name: Create Folder
+
+on:
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  create-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Folder
+        run: mkdir -p new-folder/sub-folder
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Created a new folder"
+          git push
